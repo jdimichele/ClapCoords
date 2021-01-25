@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="MinecraftDev">
+    <CLASSES>
+      <root url="file://D:/MinecraftDev" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://D:/MinecraftDev/Bukkit/src/main/java" />
+      <root url="file://D:/MinecraftDev/Bukkit/src/test/java" />
+      <root url="file://D:/MinecraftDev/CraftBukkit/src/main/java" />
+      <root url="file://D:/MinecraftDev/CraftBukkit/src/test/java" />
+      <root url="file://D:/MinecraftDev/Spigot/Spigot-API/src/main/java" />
+      <root url="file://D:/MinecraftDev/Spigot/Spigot-API/src/test/java" />
+      <root url="file://D:/MinecraftDev/Spigot/Spigot-Server/src/main/java" />
+      <root url="file://D:/MinecraftDev/Spigot/Spigot-Server/src/test/java" />
+      <root url="file://D:/MinecraftDev/work/decompile-2fb04798" />
+      <root url="file://D:/MinecraftDev" />
+    </SOURCES>
+    <jarDirectory url="file://D:/MinecraftDev" recursive="false" />
+    <jarDirectory url="file://D:/MinecraftDev" recursive="false" type="SOURCES" />
+  </library>
+</component>

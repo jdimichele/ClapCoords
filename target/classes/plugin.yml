@@ -1,0 +1,9 @@
+name:  ClapCoords
+version:  0.1
+main:  com.justindimichele.ClapCoords.ClapCoords
+api-version:  1.16
+
+commands:
+  findfriend:
+    description:  Lets you find your friend XYZ coordinates.
+    usage:  /findfriend
