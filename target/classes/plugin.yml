@@ -1,9 +1,21 @@
+main:  com.justindimichele.ClapCoords.ClapCoords
 name:  ClapCoords
 version:  0.1
-main:  com.justindimichele.ClapCoords.ClapCoords
 api-version:  1.16
 
 commands:
   findfriend:
     description:  Lets you find your friend XYZ coordinates.
     usage:  /findfriend
+
+  saveplace:
+    description: Lets you save the XYZ coordinates of a place with a custom name.
+    usage: /saveplace <placeName>
+
+  findplaces:
+    description: Helps you find places your friends have set.
+    usage: /findplaces
+
+  ccreload:
+    description: Allows you to reload ClapCoords to propogate saved Place data.
+    usage: /ccreload

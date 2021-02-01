@@ -18,24 +18,19 @@ public class FindFriend implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
     {
-        if(command.getName().equalsIgnoreCase("findfriend"))
-        {
-            if(!(sender instanceof Player))
-            {
-                sender.sendMessage("You must be a player in order to run this command.");
+        if(command.getName().equalsIgnoreCase("findfriend")) {
+
+            Player friendName = Bukkit.getPlayer(args[0]);
+
+            if (friendName == null) {
+                sender.sendMessage(args[0] + "is not currently online.");
             }
+
+            assert friendName != null;
+            Location friendCoords = friendName.getLocation();
+            sender.sendMessage(friendName.getName() + " is at " + friendCoords.getBlockX() + ", " + friendCoords.getBlockY() + ", " + friendCoords.getBlockZ() + ".");
+            return true;
         }
-
-        Player friendName = Bukkit.getPlayer(args[0]);
-
-        if (friendName == null)
-        {
-            sender.sendMessage(args[0] + "is not currently online.");
-        }
-
-        assert friendName != null;
-        Location friendCoords = friendName.getLocation();
-        sender.sendMessage(friendName.getName() + " is at " + friendCoords.getBlockX() + ", " + friendCoords.getBlockY() + ", " + friendCoords.getBlockZ() + ".");
-        return true;
+        return false;
     }
 }
