@@ -6,17 +6,17 @@ A group of friends and I realized one of the most annoying things while playing 
 ## Plugin Features:
 - **FindFriend Command**
     - Command allows players to find any online players (including themselves) and returns XYZ coordinates.
-    - **Usage:** /findfriend <player name>
+    - **Usage:** /findfriend playerName
 
 
 - **SavePlace Command**
    - Command allows players to save XYZ coordinates of a single block that would be a label for a player built building, ravine, or anything else you can think of! The command will not only save the name of the place, but the User who has saved it along with their PlayerID in the places.yml file.
-   - **Usage:** /saveplace <place name>
+   - **Usage:** /saveplace placeName
 
 
 - **FindPlaces Command**
     - Command allows you to search for any saved place by name.
-    - **Usage:** /findplaces <place name>
+    - **Usage:** /findplaces placeName
 
 ## TO-DO:
 - [ ] Create better alias for each command that will make it easier to execute. (IE: _/ff_ instead of _/findfriend_)
