@@ -3,7 +3,7 @@
 ### A Spigot plugin to help you keep track of friends, buildings, and more!
 A group of friends and I realized one of the most annoying things while playing together was constantly asking for each other coordinates or where any player built structure was. To help with that, ClapCoords was made!
 
-_Huge thanks to Keith Swanger to your help with this!_
+_Huge thanks to Keith Swanger for your help with this!_
 
 ## Plugin Features:
 - **FindFriend Command**
