@@ -1,5 +1,6 @@
 package com.justindimichele.ClapCoords;
 
+import com.justindimichele.ClapCoords.Data.PlaceData;
 import com.justindimichele.ClapCoords.Data.PlacesManager;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
@@ -10,9 +11,19 @@ import org.bukkit.entity.Player;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * SavePlace class allows the user to save a targeted block's location with a custom name, along with the following:
+ *
+ * Name - User set name for the place being saved.
+ * Player - Storing the name of the user who executed the command.
+ * PlayerID - Player UUID.
+ * Location - Stores the XYZ coordinates of the users target block.
+ * Dimension - Stores the environment of the location. (Nether, End, Overworld.)
+ *
+ * Then returns a string to the user of the saved place with the name set and XYZ coordinates.
+ */
 
 public class SavePlace implements CommandExecutor {
-
     ClapCoords plugin;
     public SavePlace (ClapCoords plugin){
         this.plugin = plugin;
@@ -32,8 +43,9 @@ public class SavePlace implements CommandExecutor {
                     placeName += args[i] + " ";
                 }
                 placeName = placeName.trim();
-
                 String placeKey = placeName.toLowerCase();
+                String dimension = player.getWorld().getEnvironment().toString().toLowerCase();
+
 
                 if(!PlacesManager.get().isConfigurationSection("Places")){
                     PlacesManager.get().createSection("Places", new HashMap<String, Object>());
@@ -50,6 +62,7 @@ public class SavePlace implements CommandExecutor {
                     placeData.put("Player", player.getDisplayName());
                     placeData.put("PlayerID", player.getUniqueId().toString());
                     placeData.put("Location", placeLocation);
+                    placeData.put("Dimension", dimension);
                     places.put(placeKey, placeData);
 
                     PlacesManager.get().createSection("Places", places);
@@ -57,7 +70,10 @@ public class SavePlace implements CommandExecutor {
 
                     PlacesManager.reload();
                     player.sendMessage("You saved " + targetBlock.getX() + ", " + targetBlock.getY() + ", " + targetBlock.getZ()
-                        + " as " + placeName);
+                        + " as " + placeName + ", " + dimension);
+
+                    PlaceData.PlaceNames.add(placeName);
+                    PlaceData.sortPlaceNames();
                 }
                 return true;
         }
