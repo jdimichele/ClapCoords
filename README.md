@@ -21,9 +21,9 @@ _Huge thanks to Keith Swanger for your help with this!_
     - **Usage:** /findplaces placeName
 
 ## TO-DO:
-- [ ] Create better alias for each command that will make it easier to execute. (IE: _/ff_ instead of _/findfriend_)
-- [ ] Create auto pop up list that pulls from the places.yml for all places saved. Current implementation does not do this, you'll need to know the name of the place specifically.
+- [x] Create better alias for each command that will make it easier to execute. (IE: _/ff_ instead of _/findfriend_)
+- [x] Create auto pop up list that pulls from the places.yml for all places saved. Current implementation does not do this, you'll need to know the name of the place specifically.
 - [ ] Add ability to remove a saved place and have specific permission to do so. (Either admin or only players who have saved a place can remove the place they have saved.)
 - [ ] Add ability to list all specific locations made by a player. (IE: _/list_ <player name> will display all the places that they've saved.)
-- [ ] Add ability to use /findfriends command without an additional argument and show all online player coordinates.
+- [x] Add ability to use /findfriends command without an additional argument and show all online player coordinates.
 - [ ] Potentially a compass object?
