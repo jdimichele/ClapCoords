@@ -1,29 +1,41 @@
-# 👏 ClapCoords 👏 
+# 👏 ClapCoords v1.1 👏
+While I was pretty happy with the base functionality of v1.0, I soon realized there were some QoL changes that could be made and ultimately make the plugin more usable and less of a hassle. While most of these changes were noted in the first release "TO-DO" section, there are also some additional changes that felt more user friendly.
 
-### A Spigot plugin to help you keep track of friends, buildings, and more!
-A group of friends and I realized one of the most annoying things while playing together was constantly asking for each other coordinates or where any player built structure was. To help with that, ClapCoords was made!
+Thanks to Keith Swanger once again for all your help! 😄
 
-_Huge thanks to Keith Swanger for your help with this!_
+# Release Notes:
+## New Features:
+* _Added FindPlace command_
+  * _Purpose:_ FindPlace command displays available argument list of all the places that players have saved in the world. Select one of the saved places from the list, then hit tab, then enter, and... Bam! The selected place will return with XYZ coordinates.
+  * FindPlace is not case-sensitive, so type as fast as you possibly can and fear not.
+  * FindPlace has Tab Completion available with a list of all the saved places to find.
+  * Added alias.
 
-## Plugin Features:
-- **FindFriend Command**
-    - Command allows players to find any online players (including themselves) and returns XYZ coordinates.
-    - **Usage:** /findfriend playerName
+* _Modified SavePlace command_
+  * SavePlace will now save whether the place saved is in the Nether, The End, or the Overworld. Check the Wiki for more information on how this is saved.
+  * SavePlace now will warn you if a place has already been saved.
+
+* _Modified FindPlaces command_
+  * FindPlaces will now show all saved places with their XYZ coordinates.
+  * Added alias.
+
+* _Modified FindFriend command_
+  * FindFriend will now show you all online friends with all their coordinates if no friend name is specifically chosen.
+  * Added alias.
+
+* _Added aliases for commands_
+  * Now instead of typing out the commands entirely, you can use aliases to make the command execution time MUCH faster. (Example: instead of /findfriend <friendName>, now use /ff <friendName>)
+  * Check the Wiki or README for more information on this.
 
 
-- **SavePlace Command**
-   - Command allows players to save XYZ coordinates of a single block that would be a label for a player built building, ravine, or anything else you can think of! The command will not only save the name of the place, but the User who has saved it along with their PlayerID in the places.yml file.
-   - **Usage:** /saveplace placeName
+## Additional Changes:
+* Changed how the data is gathered and displayed from the places.yml file for easier and concise understanding.
+* Added inline documentation to better explain how each method works.
+* Added ClapCoords Wikipage to allow for more easier look up on how to use the plugin.
+* Cleaned up unnecessary white space/unused imports.
 
+Lastly, I have some other ideas I'd like to implement for ClapCoords as I think it could be a useful plugin others might like to try out. I'll be updating the plugin periodically and also be updating the Wiki with more plans and the never-ending To-Do list I have setup. :)
 
-- **FindPlaces Command**
-    - Command allows you to search for any saved place by name.
-    - **Usage:** /findplaces placeName
+Until then, thanks for checking out ClapCoords!
 
-## TO-DO:
-- [x] Create better alias for each command that will make it easier to execute. (IE: _/ff_ instead of _/findfriend_)
-- [x] Create auto pop up list that pulls from the places.yml for all places saved. Current implementation does not do this, you'll need to know the name of the place specifically.
-- [ ] Add ability to remove a saved place and have specific permission to do so. (Either admin or only players who have saved a place can remove the place they have saved.)
-- [ ] Add ability to list all specific locations made by a player. (IE: _/list_ <player name> will display all the places that they've saved.)
-- [x] Add ability to use /findfriends command without an additional argument and show all online player coordinates.
-- [ ] Potentially a compass object?
+Justin
