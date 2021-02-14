@@ -31,7 +31,7 @@ Thanks to Keith Swanger once again for all your help! 😄
 ## Additional Changes:
 * Changed how the data is gathered and displayed from the places.yml file for easier and concise understanding.
 * Added inline documentation to better explain how each method works.
-* Added ClapCoords Wikipage to allow for more easier look up on how to use the plugin.
+* Added ClapCoords Wikipage to allow for easy look up on how to use the plugin.
 * Cleaned up unnecessary white space/unused imports.
 
 Lastly, I have some other ideas I'd like to implement for ClapCoords as I think it could be a useful plugin others might like to try out. I'll be updating the plugin periodically and also be updating the Wiki with more plans and the never-ending To-Do list I have setup. :)
