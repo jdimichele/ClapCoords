@@ -80,6 +80,10 @@ public class PlaceData {
         return namedPlaces;
     }
 
+    public static void deletePlaceData(){
+
+    }
+
     /**
      * sortPlaceNames() method sorts all place names when called.
      */

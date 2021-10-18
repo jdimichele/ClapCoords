@@ -1,7 +1,7 @@
 main:  com.justindimichele.ClapCoords.ClapCoords
 name:  ClapCoords
-version:  1.1
-api-version:  1.16
+version:  1.2
+api-version:  1.17
 
 commands:
   findfriend:

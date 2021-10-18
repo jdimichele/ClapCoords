@@ -3,6 +3,7 @@ package com.justindimichele.ClapCoords;
 import com.justindimichele.ClapCoords.Data.PlaceData;
 import com.justindimichele.ClapCoords.Data.PlacesManager;
 import com.justindimichele.ClapCoords.Data.ReloadPlacesManager;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -28,6 +29,9 @@ public class ClapCoords extends JavaPlugin {
         // Separation for ease of understanding that FindPlace is the only class that uses TabCompleter.
         this.getCommand("findplace").setExecutor(new FindPlace(this));
         this.getCommand("findplace").setTabCompleter(new FindPlace(this));
+
+        this.getCommand("unsave").setExecutor(new UnsavePlace(this));
+        this.getCommand("unsave").setTabCompleter(new UnsavePlace(this));
 
 
 
