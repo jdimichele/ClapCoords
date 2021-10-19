@@ -6,11 +6,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
-import org.bukkit.configuration.MemorySection;
 import org.bukkit.entity.Player;
 
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class UnsavePlace implements CommandExecutor, TabCompleter {
@@ -29,16 +27,13 @@ public class UnsavePlace implements CommandExecutor, TabCompleter {
             placeName = placeName.trim();
             String placeKey = placeName.toLowerCase();
 
-            Map<String, Object> places = PlacesManager.get().getConfigurationSection("Places").getValues(true);
-            MemorySection placeInfoObject = (MemorySection) places.get(placeKey);
 
-            Map<String, Object> placeInfo = (placeInfoObject.getValues(false));
-            if(placeInfo == null){
-                player.sendMessage("Can't unsave something that doesn't exist yet.");
-            } else {
-                placeInfo.remove(placeKey);
-                player.sendMessage("Place has been deleted!");
-            }
+//            if(placeInfo == null){
+//                player.sendMessage("Can't unsave something that doesn't exist yet.");
+//            } else {
+//                placeInfo.remove(placeKey);
+//                player.sendMessage("Place has been deleted.");
+//            }
         }
         return false;
     }

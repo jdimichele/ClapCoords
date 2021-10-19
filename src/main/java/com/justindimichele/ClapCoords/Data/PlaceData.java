@@ -1,6 +1,7 @@
 package com.justindimichele.ClapCoords.Data;
 
 
+import org.bukkit.command.Command;
 import org.bukkit.configuration.MemorySection;
 
 import java.util.ArrayList;
@@ -81,7 +82,24 @@ public class PlaceData {
     }
 
     public static void deletePlaceData(){
+        Map<String, Object> places = PlacesManager.get().getConfigurationSection("Places").getValues(true);
+        List<PlaceData> namedPlaces = new ArrayList<PlaceData>();
 
+        if(places != null){
+            for (Map.Entry<String, Object> entry : places.entrySet()) {
+                Object placeMemSection = places.get(entry.getKey());
+                if(placeMemSection instanceof MemorySection) {
+                    MemorySection placesInfoObject = (MemorySection) placeMemSection;
+                    Map<String, Object> placesInfo = (placesInfoObject.getValues(false));
+                    namedPlaces.add(new PlaceData(
+                            placesInfo.remove("Name").toString(),
+                            placesInfo.get("Player").toString(),
+                            placesInfo.get("PlayerID").toString(),
+                            placesInfo.get("Location").toString(),
+                            placesInfo.get("Dimension").toString()));
+                }
+            }
+        }
     }
 
     /**
