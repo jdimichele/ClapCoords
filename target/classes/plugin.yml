@@ -5,13 +5,17 @@ api-version:  1.17
 
 commands:
   findfriend:
-    description:  Lets you find your friend XYZ coordinates.
+    description: Lets you find your friend XYZ coordinates.
     usage:  /findfriend <friendName>
     aliases: [ff]
 
   saveplace:
     description: Lets you save the XYZ coordinates of a place with a custom name.
     usage: /saveplace <placeName>
+
+  unsave:
+    description: Lets you un-save a place that was previously saved.
+    usage: /unsave <placeName>
 
   findplace:
     description: Helps you find places your friends have set.

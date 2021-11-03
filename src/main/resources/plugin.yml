@@ -5,7 +5,7 @@ api-version:  1.17
 
 commands:
   findfriend:
-    description:  Lets you find your friend XYZ coordinates.
+    description: Lets you find your friend XYZ coordinates.
     usage:  /findfriend <friendName>
     aliases: [ff]
 

@@ -5,13 +5,15 @@ import com.justindimichele.ClapCoords.Data.PlacesManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
+
+import org.bukkit.configuration.MemorySection;
 import org.bukkit.entity.Player;
 
+import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Map;
 
-public class UnsavePlace implements CommandExecutor, TabCompleter {
+public class UnsavePlace implements CommandExecutor {
     ClapCoords plugin;
     public UnsavePlace (ClapCoords plugin) {this.plugin = plugin;}
 
@@ -26,33 +28,25 @@ public class UnsavePlace implements CommandExecutor, TabCompleter {
             }
             placeName = placeName.trim();
             String placeKey = placeName.toLowerCase();
+            String dimension = player.getWorld().getEnvironment().toString().toLowerCase();
 
 
-//            if(placeInfo == null){
-//                player.sendMessage("Can't unsave something that doesn't exist yet.");
-//            } else {
-//                placeInfo.remove(placeKey);
-//                player.sendMessage("Place has been deleted.");
-//            }
+            Map<String, Object> places = PlacesManager.get().getConfigurationSection("Places").getValues(false);
+            MemorySection placeInfoObject = (MemorySection) places.get(placeKey);
+
+            Map<String, Object> placeInfo = (placeInfoObject.getValues(false));
+
+            if(placeInfo.containsKey(placeName)){
+                places.replace(placeKey, placeName, null);
+
+                PlacesManager.save();
+                PlacesManager.reload();
+                player.sendMessage("You unsaved " + placeName + ", " + dimension);
+            } else {
+                player.sendMessage("This place does not exist!");
+            }
         }
         return false;
     }
 
-    @Override
-    public List<String> onTabComplete(CommandSender commandSender, Command command, String label, String[] args) {
-        if(args == null || args.length == 0 || args[0].equals("")){
-            return PlaceData.PlaceNames;
-        }
-
-        List<String> TabPlaces;
-
-        String placeName = "";
-        for (int i = 0; i < args.length; i++) {
-            placeName += args[i] + " ";
-        }
-
-        String finalPlaceName = placeName.toLowerCase().substring(0, placeName.length() - 1);
-        TabPlaces = PlaceData.PlaceNames.stream().filter(x -> x.toLowerCase().startsWith(finalPlaceName)).collect(Collectors.toList());
-        return TabPlaces;
-    }
 }
