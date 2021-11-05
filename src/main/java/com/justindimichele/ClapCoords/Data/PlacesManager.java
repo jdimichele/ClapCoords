@@ -6,6 +6,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class PlacesManager {
 
@@ -21,7 +22,12 @@ public class PlacesManager {
                 System.out.println("Could not create new " + placesFile + ".");
             }
         }
+
         placesFile = YamlConfiguration.loadConfiguration(file);
+
+        if(!placesFile.isConfigurationSection("Places")){
+            placesFile.createSection("Places", new HashMap<String, Object>());
+        }
     }
 
     public static FileConfiguration get(){

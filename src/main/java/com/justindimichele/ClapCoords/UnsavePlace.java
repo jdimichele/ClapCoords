@@ -1,6 +1,5 @@
 package com.justindimichele.ClapCoords;
 
-import com.justindimichele.ClapCoords.Data.PlaceData;
 import com.justindimichele.ClapCoords.Data.PlacesManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,8 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.entity.Player;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class UnsavePlace implements CommandExecutor {
@@ -37,7 +34,7 @@ public class UnsavePlace implements CommandExecutor {
             Map<String, Object> placeInfo = (placeInfoObject.getValues(false));
 
             if(placeInfo.containsKey(placeName)){
-                places.replace(placeKey, placeName, null);
+                placeInfo.replace(placeKey, placeKey, null);
 
                 PlacesManager.save();
                 PlacesManager.reload();

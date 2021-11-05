@@ -1,7 +1,5 @@
 package com.justindimichele.ClapCoords.Data;
 
-
-import org.bukkit.command.*;
 import org.bukkit.configuration.MemorySection;
 
 import java.util.ArrayList;
