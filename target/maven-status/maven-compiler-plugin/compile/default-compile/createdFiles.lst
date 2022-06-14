@@ -4,6 +4,6 @@ com\justindimichele\ClapCoords\FindPlace.class
 com\justindimichele\ClapCoords\Data\PlaceData.class
 com\justindimichele\ClapCoords\ClapCoords.class
 com\justindimichele\ClapCoords\FindFriend.class
-com\justindimichele\ClapCoords\UnsavePlace.class
+com\justindimichele\ClapCoords\RemovePlace.class
 com\justindimichele\ClapCoords\SavePlace.class
 com\justindimichele\ClapCoords\Data\PlacesManager.class

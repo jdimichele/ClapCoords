@@ -24,7 +24,7 @@ public class ClapCoords extends JavaPlugin {
         this.getCommand("findfriend").setExecutor(new FindFriend(this));
         this.getCommand("findplaces").setExecutor(new FindPlaces(this));
         this.getCommand("saveplace").setExecutor(new SavePlace(this));
-        this.getCommand("unsave").setExecutor(new UnsavePlace(this));
+        //this.getCommand("removeplace").setExecutor(new RemovePlace(this));
 
         // Separation for ease of understanding that FindPlace is the only class that uses TabCompleter.
         this.getCommand("findplace").setExecutor(new FindPlace(this));

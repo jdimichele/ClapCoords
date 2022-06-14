@@ -1,7 +1,7 @@
 main:  com.justindimichele.ClapCoords.ClapCoords
 name:  ClapCoords
 version:  1.2
-api-version:  1.17
+api-version:  1.19
 
 commands:
   findfriend:
@@ -15,7 +15,8 @@ commands:
 
   unsave:
     description: Lets you un-save a place that was previously saved.
-    usage: /unsave <placeName>
+    usage: /removeplace <placeName>
+    aliases: [rplace]
 
   findplace:
     description: Helps you find places your friends have set.
